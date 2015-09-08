@@ -11,3 +11,4 @@
 /build/*
 /.gradle
 /app/build
+/app/app.iml
