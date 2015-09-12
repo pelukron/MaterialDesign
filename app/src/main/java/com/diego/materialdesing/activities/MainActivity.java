@@ -1,6 +1,7 @@
 package com.diego.materialdesing.activities;
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +15,7 @@ import com.diego.materialdesing.R;
 public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton fabBtn;
-    FrameLayout rootLayout;
+    CoordinatorLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initInstance() {
-        rootLayout = (FrameLayout) findViewById(R.id.rootLayout);
+        rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
         fabBtn = (FloatingActionButton)findViewById(R.id.fabBtn);
         fabBtn.setOnClickListener(new View.OnClickListener() {
             @Override
