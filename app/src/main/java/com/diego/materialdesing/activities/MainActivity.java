@@ -3,6 +3,7 @@ package com.diego.materialdesing.activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,8 +14,8 @@ import com.diego.materialdesing.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Toolbar toolbar;
     private FloatingActionButton fab;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         setupToolbar();
         setupFab();
+        setupTabLayout();
+    }
+
+    private void setupTabLayout() {
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.addTab(tabLayout.newTab().setText("Tab #1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab #2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab #3"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab #4"));
     }
 
     private void setupFab() {
@@ -30,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupToolbar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
 
@@ -58,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.fab:
                 Snackbar.make(findViewById(R.id.rootLayout), "Snackbar", Snackbar.LENGTH_SHORT)
                         .setAction("action", this).show();
