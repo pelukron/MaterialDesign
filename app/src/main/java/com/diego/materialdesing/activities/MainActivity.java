@@ -16,9 +16,6 @@ import com.diego.materialdesing.adapters.MyPageAdapter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private FloatingActionButton fab;
-    private TabLayout tabLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupTabLayout() {
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MyPageAdapter(getSupportFragmentManager()));
@@ -37,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupFab() {
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
     }
 
